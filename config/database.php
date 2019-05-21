@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'neo4j'),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,6 +78,14 @@ return [
             'prefix' => '',
         ],
 
+        'neo4j' => [
+            'driver' => 'neo4j',
+            'host'   => env('DB_HOST', 'localhost'),
+            'port'   => env('DB_PORT', '7474'),
+            'username' => env('DB_USERNAME', null),
+            'password' => env('DB_PASSWORD', null)
+        ]
+
     ],
 
     /*
@@ -115,14 +123,6 @@ return [
             'database' => 0,
         ],
 
-    ],
-
-//    'neo4j' => [
-//        'driver' => 'neo4j',
-//        'host'   => env('DB_HOST', 'localhost'),
-//        'port'   => env('DB_PORT', '7474'),
-//        'username' => env('DB_USERNAME', null),
-//        'password' => env('DB_PASSWORD', null)
-//    ]
+    ]
 
 ];
