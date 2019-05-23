@@ -83,9 +83,9 @@ return [
             'host'   => env('DB_HOST', 'localhost'),
             'port'   => env('DB_PORT', '7474'),
             'username' => env('DB_USERNAME', null),
-            'password' => env('DB_PASSWORD', null)
+            'password' => env('DB_PASSWORD', null),
+            'ssl'    => env('DB_SSL', false)
         ]
-
     ],
 
     /*

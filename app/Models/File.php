@@ -4,6 +4,7 @@ use Vinelab\NeoEloquent\Eloquent\Model as NeoEloquent;
 /**
  * Class File
  * @package App\Models
+ * @property int id
  * @property string name
  * @property string path
  * @property string content
@@ -21,4 +22,8 @@ class File extends NeoEloquent{
         'type',
         'create_commit'
     ];
+
+    public function clazzes(){
+        return $this->hasMany(Clazz::class, 'FiletoClass');
+    }
 }

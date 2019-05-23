@@ -5,6 +5,7 @@ use Vinelab\NeoEloquent\Eloquent\Model as NeoEloquent;
 /**
  * Class Method
  * @package App\Models
+ * @property int id
  * @property string name
  * @property string body
  * @property string content_md5
@@ -14,7 +15,7 @@ use Vinelab\NeoEloquent\Eloquent\Model as NeoEloquent;
  * @property string create_commit
  */
 class Method extends NeoEloquent{
-    protected $label = 'method';
+    protected $label = 'Method';
     protected $fillable = [
         'name',
         'body',
@@ -24,4 +25,9 @@ class Method extends NeoEloquent{
         'path_signature',
         'create_commit'
     ];
+
+    public function apis(){
+        return $this->hasMany(Api::class, 'MethodtoAPI');
+    }
+
 }
